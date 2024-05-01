@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  my-app-db:
-    container_name: "my-app-db"
+  postgres:
+    container_name: "postgresql"
     image: postgres
     ports:
       - "5432:5432"
@@ -11,7 +11,7 @@ services:
     volumes:
       - "./pgdata:/var/lib/postgresql/data"
     environment:
-      - "POSTGRES_DB=my-app-db"
+      - "POSTGRES_DB=postgres"
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=root"
       - "PGDATA=/var/lib/postgresql/data/pgdata"
